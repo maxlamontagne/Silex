@@ -354,10 +354,10 @@ class SecurityServiceProvider implements ServiceProviderInterface
 
             $session = $request->getSession();
             if ($session && $session->has($error)) {
-                $error = $session->get($error)->getMessage();
+                $errorMessage = $session->get($error)->getMessage();
                 $session->remove($error);
 
-                return $error;
+                return $errorMessage;
             }
         });
 
